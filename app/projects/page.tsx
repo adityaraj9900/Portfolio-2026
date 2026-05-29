@@ -3,10 +3,90 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowLeft, ExternalLink, Github } from "lucide-react"
+import { ArrowLeft, ExternalLink, Github, Briefcase, Code2 } from "lucide-react"
+
+type Project = {
+  title: string
+  description: string
+  image: string
+  tech: string[]
+  highlights: string[]
+  link?: string
+  github?: string
+  links?: { label: string; url: string }[]
+  company?: string
+}
+
+const WORO_EMOJI = ["🏥", "🎙️", "💬", "🏢", "🏡", "✈️", "📋"]
 
 export default function Projects() {
-  const projects = [
+  const professionalProjects: Project[] = [
+    {
+      title: "WeCare Healthcare Platform",
+      description:
+        "Full-stack healthcare super-app featuring OTP-based patient login, AI-powered symptom analysis, OPD search & booking, digital medical record hosting, pharmacy services, home nursing care, and a multi-panel ambulance dispatch network.",
+      image: "/placeholder.svg",
+      tech: ["React", "Node.js", "TypeScript", "AI/ML", "REST APIs", "MySQL"],
+      highlights: ["AI symptom analysis", "OPD booking", "Ambulance dispatch", "Medical records"],
+      company: "Woro Global",
+    },
+    {
+      title: "Woro AI Voice",
+      description:
+        "Conversational AI platform deploying human-sounding, multilingual voice agents capable of handling lead qualification, customer support, and appointment booking 24/7 — with seamless CRM workflow integrations.",
+      image: "/placeholder.svg",
+      tech: ["AI/ML", "Node.js", "TypeScript", "WebSockets", "NLP"],
+      highlights: ["Multilingual agents", "Lead qualification", "24/7 automation", "CRM integration"],
+      company: "Woro Global",
+    },
+    {
+      title: "Woro Chat — WhatsApp CRM",
+      description:
+        "Multi-agent WhatsApp CRM centralizing messaging into a shared inbox with a no-code chatbot builder, automated workflows, and native sync with enterprise tools like CRMs and helpdesks.",
+      image: "/placeholder.svg",
+      tech: ["React", "Node.js", "WhatsApp API", "TypeScript", "MySQL"],
+      highlights: ["Shared inbox", "No-code chatbot", "Multi-agent", "Enterprise sync"],
+      company: "Woro Global",
+    },
+    {
+      title: "Squarevize — Corporate Services",
+      description:
+        "AI-powered global corporate services platform automating company formation across UAE mainland and free zones, with integrated VAT compliance, accounting, cybersecurity, cloud infrastructure, and AI automation services.",
+      image: "/placeholder.svg",
+      tech: ["Next.js", "TypeScript", "React", "Tailwind CSS", "AI"],
+      highlights: ["Company formation", "UAE incorporation", "VAT compliance", "AI automation"],
+      company: "Woro Global",
+    },
+    {
+      title: "IGRE — Real Estate Platform",
+      description:
+        "Hyper-local Abu Dhabi real estate boutique platform with island-specific property listings, broker-inspected inventory, and client-first honest guidance — designed for long-term relationship-driven sales.",
+      image: "/placeholder.svg",
+      tech: ["Next.js", "TypeScript", "React", "Tailwind CSS", "REST APIs"],
+      highlights: ["Property listings", "Broker portal", "Abu Dhabi market", "Client matching"],
+      company: "Woro Global",
+    },
+    {
+      title: "Global Vacations — Travel Portal",
+      description:
+        "Full-featured travel agency platform for custom domestic and international tour package discovery, booking, and itinerary management with dual admin and customer-facing interfaces.",
+      image: "/placeholder.svg",
+      tech: ["React", "TypeScript", "Node.js", "REST APIs", "MySQL"],
+      highlights: ["Tour packages", "Booking system", "Admin dashboard", "Itinerary builder"],
+      company: "Woro Global",
+    },
+    {
+      title: "Task Manager — Enterprise",
+      description:
+        "Productivity and project tracking tool enabling teams to organize, assign, prioritize, and monitor agile workflows with role-based access control, real-time updates, and progress analytics.",
+      image: "/placeholder.svg",
+      tech: ["React", "TypeScript", "Node.js", "REST APIs"],
+      highlights: ["Agile workflows", "Role-based access", "Real-time updates", "Progress tracking"],
+      company: "Woro Global",
+    },
+  ]
+
+  const personalProjects: Project[] = [
     {
       title: "Wanderlust",
       description:
@@ -56,7 +136,7 @@ export default function Projects() {
       highlights: ["3D graphics", "Smooth animations", "Interactive elements", "WebGL"],
     },
     {
-      title: "Notion Clone - Jotion",
+      title: "Notion Clone — Jotion",
       description:
         "Full-featured Notion clone with real-time collaboration, rich text editing, and workspace management.",
       image: "/notion-style-note-taking-app-with-sidebar-and-rich.jpg",
@@ -124,88 +204,177 @@ export default function Projects() {
         <div className="space-y-4 mb-12 sm:mb-16 animate-fade-in-up">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">All Projects</h1>
           <p className="text-base sm:text-lg text-muted-foreground max-w-3xl leading-relaxed">
-            A comprehensive showcase of my work spanning full-stack applications, AI/ML projects, and interactive
-            experiences.
+            Enterprise products shipped at{" "}
+            <a
+              href="https://woro.co.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline font-medium"
+            >
+              Woro Global
+            </a>
+            , full-stack applications, AI/ML research, and interactive side-projects.
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <Card
-              key={index}
-              className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
-              style={{ animationDelay: `${0.05 * (index % 6)}s` }}
+        {/* Professional Work */}
+        <section className="mb-16 sm:mb-20 animate-fade-in-up">
+          <div className="flex items-center gap-3 mb-2 sm:mb-3">
+            <div className="p-2 bg-gradient-to-br from-primary to-secondary rounded-lg">
+              <Briefcase className="h-5 w-5 text-primary-foreground" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold">Professional Work</h2>
+          </div>
+          <p className="text-sm text-muted-foreground mb-6 sm:mb-8 ml-[52px]">
+            Enterprise-grade products built at{" "}
+            <a
+              href="https://woro.co.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
             >
-              <div className="relative h-48 sm:h-56 overflow-hidden bg-muted">
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute bottom-3 left-3 right-3">
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-1">{project.title}</h3>
-                </div>
-              </div>
+              Woro Global
+            </a>{" "}
+            — an AI-first product studio
+          </p>
 
-              <div className="p-4 sm:p-6 space-y-4">
-                <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-xs">
-                      {tech}
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {professionalProjects.map((project, index) => (
+              <Card
+                key={index}
+                className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up border-primary/20 bg-gradient-to-br from-card via-card to-primary/5"
+                style={{ animationDelay: `${0.05 * (index % 6)}s` }}
+              >
+                <div className="relative h-36 sm:h-40 overflow-hidden bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 flex items-center justify-center">
+                  <span className="text-5xl sm:text-6xl opacity-25 select-none">{WORO_EMOJI[index]}</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                  <div className="absolute top-3 left-3">
+                    <Badge className="bg-primary/90 text-primary-foreground text-[10px] font-bold uppercase tracking-wider">
+                      Professional
                     </Badge>
-                  ))}
+                  </div>
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <h3 className="text-base sm:text-lg font-bold text-white leading-tight">{project.title}</h3>
+                    <p className="text-xs text-white/60 mt-0.5">@ {project.company}</p>
+                  </div>
                 </div>
 
-                <div>
-                  <h4 className="text-xs font-semibold mb-2 text-muted-foreground uppercase">Highlights</h4>
-                  <ul className="grid grid-cols-2 gap-x-2 gap-y-1">
-                    {project.highlights.map((highlight, i) => (
-                      <li key={i} className="text-xs text-muted-foreground flex items-start">
-                        <span className="mr-1 text-primary">•</span>
-                        <span>{highlight}</span>
-                      </li>
+                <div className="p-4 sm:p-5 space-y-3">
+                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">{project.description}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tech.map((tech) => (
+                      <Badge key={tech} variant="secondary" className="text-xs">
+                        {tech}
+                      </Badge>
                     ))}
-                  </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-semibold mb-2 text-muted-foreground uppercase tracking-wider">
+                      Key Features
+                    </h4>
+                    <ul className="grid grid-cols-2 gap-x-2 gap-y-1">
+                      {project.highlights.map((highlight, i) => (
+                        <li key={i} className="text-xs text-muted-foreground flex items-start">
+                          <span className="mr-1 text-primary flex-shrink-0">•</span>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Personal Projects */}
+        <section className="animate-fade-in-up">
+          <div className="flex items-center gap-3 mb-2 sm:mb-3">
+            <div className="p-2 bg-gradient-to-br from-secondary to-accent rounded-lg">
+              <Code2 className="h-5 w-5 text-secondary-foreground" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold">Open Source & Personal</h2>
+          </div>
+          <p className="text-sm text-muted-foreground mb-6 sm:mb-8 ml-[52px]">
+            Side projects, AI/ML research, and passion builds
+          </p>
+
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {personalProjects.map((project, index) => (
+              <Card
+                key={index}
+                className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
+                style={{ animationDelay: `${0.05 * (index % 6)}s` }}
+              >
+                <div className="relative h-48 sm:h-56 overflow-hidden bg-muted">
+                  <Image
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-1">{project.title}</h3>
+                  </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {project.link && (
-                    <Button asChild size="sm" className="flex-1 min-w-[100px]">
-                      <Link href={project.link} target="_blank">
-                        <ExternalLink className="mr-1.5 h-3 w-3" />
-                        Live
-                      </Link>
-                    </Button>
-                  )}
-                  {project.github && (
-                    <Button asChild size="sm" variant="outline" className="flex-1 min-w-[100px] bg-transparent">
-                      <Link href={project.github} target="_blank">
-                        <Github className="mr-1.5 h-3 w-3" />
-                        Code
-                      </Link>
-                    </Button>
-                  )}
-                  {project.links && (
-                    <div className="flex flex-wrap gap-2 w-full">
-                      {project.links.map((link, i) => (
-                        <Button key={i} asChild size="sm" variant="outline" className="flex-1 bg-transparent">
-                          <Link href={link.url} target="_blank">
-                            {link.label}
-                          </Link>
-                        </Button>
+                <div className="p-4 sm:p-6 space-y-4">
+                  <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <Badge key={tech} variant="secondary" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-semibold mb-2 text-muted-foreground uppercase tracking-wider">
+                      Highlights
+                    </h4>
+                    <ul className="grid grid-cols-2 gap-x-2 gap-y-1">
+                      {project.highlights.map((highlight, i) => (
+                        <li key={i} className="text-xs text-muted-foreground flex items-start">
+                          <span className="mr-1 text-primary flex-shrink-0">•</span>
+                          <span>{highlight}</span>
+                        </li>
                       ))}
-                    </div>
-                  )}
+                    </ul>
+                  </div>
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {project.link && (
+                      <Button asChild size="sm" className="flex-1 min-w-[100px]">
+                        <Link href={project.link} target="_blank">
+                          <ExternalLink className="mr-1.5 h-3 w-3" />
+                          Live
+                        </Link>
+                      </Button>
+                    )}
+                    {project.github && (
+                      <Button asChild size="sm" variant="outline" className="flex-1 min-w-[100px] bg-transparent">
+                        <Link href={project.github} target="_blank">
+                          <Github className="mr-1.5 h-3 w-3" />
+                          Code
+                        </Link>
+                      </Button>
+                    )}
+                    {project.links && (
+                      <div className="flex flex-wrap gap-2 w-full">
+                        {project.links.map((link, i) => (
+                          <Button key={i} asChild size="sm" variant="outline" className="flex-1 bg-transparent">
+                            <Link href={link.url} target="_blank">
+                              {link.label}
+                            </Link>
+                          </Button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </Card>
-          ))}
-        </div>
+              </Card>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   )
