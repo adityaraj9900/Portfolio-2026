@@ -32,7 +32,7 @@ export default function About() {
     },
     {
       company: "OGA Business Solutions",
-      companyUrl: "https://www.ogabusinesssolutions.in/",
+      companyUrl: "",
       role: "Software Development Engineer I",
       period: "Nov 2024 - Jan 2025",
       location: "Noida, India",
