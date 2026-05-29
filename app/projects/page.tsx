@@ -22,67 +22,67 @@ const WORO_EMOJI = ["🏥", "🎙️", "💬", "🏢", "🏡", "✈️", "📋"]
 export default function Projects() {
   const professionalProjects: Project[] = [
     {
-      title: "WeCare Healthcare Platform",
+      title: "Healthcare Super-App",
       description:
         "Full-stack healthcare super-app featuring OTP-based patient login, AI-powered symptom analysis, OPD search & booking, digital medical record hosting, pharmacy services, home nursing care, and a multi-panel ambulance dispatch network.",
       image: "/placeholder.svg",
       tech: ["React", "Node.js", "TypeScript", "AI/ML", "REST APIs", "MySQL"],
       highlights: ["AI symptom analysis", "OPD booking", "Ambulance dispatch", "Medical records"],
-      company: "Woro Global",
+
     },
     {
-      title: "Woro AI Voice",
+      title: "AI Voice Agent Platform",
       description:
         "Conversational AI platform deploying human-sounding, multilingual voice agents capable of handling lead qualification, customer support, and appointment booking 24/7 — with seamless CRM workflow integrations.",
       image: "/placeholder.svg",
       tech: ["AI/ML", "Node.js", "TypeScript", "WebSockets", "NLP"],
       highlights: ["Multilingual agents", "Lead qualification", "24/7 automation", "CRM integration"],
-      company: "Woro Global",
+
     },
     {
-      title: "Woro Chat — WhatsApp CRM",
+      title: "WhatsApp CRM Solution",
       description:
         "Multi-agent WhatsApp CRM centralizing messaging into a shared inbox with a no-code chatbot builder, automated workflows, and native sync with enterprise tools like CRMs and helpdesks.",
       image: "/placeholder.svg",
       tech: ["React", "Node.js", "WhatsApp API", "TypeScript", "MySQL"],
       highlights: ["Shared inbox", "No-code chatbot", "Multi-agent", "Enterprise sync"],
-      company: "Woro Global",
+
     },
     {
-      title: "Squarevize — Corporate Services",
+      title: "Corporate Services Platform",
       description:
-        "AI-powered global corporate services platform automating company formation across UAE mainland and free zones, with integrated VAT compliance, accounting, cybersecurity, cloud infrastructure, and AI automation services.",
+        "AI-powered global corporate services platform automating company formation and compliance workflows, with integrated accounting, cybersecurity, cloud infrastructure, and AI automation services.",
       image: "/placeholder.svg",
       tech: ["Next.js", "TypeScript", "React", "Tailwind CSS", "AI"],
       highlights: ["Company formation", "UAE incorporation", "VAT compliance", "AI automation"],
-      company: "Woro Global",
+
     },
     {
-      title: "IGRE — Real Estate Platform",
+      title: "Real Estate Boutique Platform",
       description:
-        "Hyper-local Abu Dhabi real estate boutique platform with island-specific property listings, broker-inspected inventory, and client-first honest guidance — designed for long-term relationship-driven sales.",
+        "Hyper-local real estate boutique platform with area-specific property listings, broker-inspected inventory, and client-first guidance — designed for long-term relationship-driven sales.",
       image: "/placeholder.svg",
       tech: ["Next.js", "TypeScript", "React", "Tailwind CSS", "REST APIs"],
       highlights: ["Property listings", "Broker portal", "Abu Dhabi market", "Client matching"],
-      company: "Woro Global",
+
     },
     {
-      title: "Global Vacations — Travel Portal",
+      title: "Travel Agency Portal",
       description:
         "Full-featured travel agency platform for custom domestic and international tour package discovery, booking, and itinerary management with dual admin and customer-facing interfaces.",
       image: "/placeholder.svg",
       tech: ["React", "TypeScript", "Node.js", "REST APIs", "MySQL"],
       highlights: ["Tour packages", "Booking system", "Admin dashboard", "Itinerary builder"],
-      company: "Woro Global",
+
     },
     {
-      title: "Task Manager — Enterprise",
+      title: "Enterprise Task Manager",
       description:
         "Productivity and project tracking tool enabling teams to organize, assign, prioritize, and monitor agile workflows with role-based access control, real-time updates, and progress analytics.",
       image: "/placeholder.svg",
       tech: ["React", "TypeScript", "Node.js", "REST APIs"],
       highlights: ["Agile workflows", "Role-based access", "Real-time updates", "Progress tracking"],
-      company: "Woro Global",
+
     },
   ]
 
@@ -206,10 +206,8 @@ export default function Projects() {
           <p className="text-base sm:text-lg text-muted-foreground max-w-3xl leading-relaxed">
             Enterprise products shipped at{" "}
             <a
-              href="https://woro.co.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline font-medium"
+              href="#"
+              className="text-primary font-medium"
             >
               Woro Global
             </a>
@@ -227,15 +225,7 @@ export default function Projects() {
           </div>
           <p className="text-sm text-muted-foreground mb-6 sm:mb-8 ml-[52px]">
             Enterprise-grade products built at{" "}
-            <a
-              href="https://woro.co.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              Woro Global
-            </a>{" "}
-            — an AI-first product studio
+  my current employer — an AI-first product studio
           </p>
 
           <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -255,7 +245,7 @@ export default function Projects() {
                   </div>
                   <div className="absolute bottom-3 left-3 right-3">
                     <h3 className="text-base sm:text-lg font-bold text-white leading-tight">{project.title}</h3>
-                    <p className="text-xs text-white/60 mt-0.5">@ {project.company}</p>
+                    <p className="text-xs text-white/60 mt-0.5">@ Current Employer</p>
                   </div>
                 </div>
 
